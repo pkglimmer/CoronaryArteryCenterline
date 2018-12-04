@@ -1,0 +1,42 @@
+function vesselShow(ROI, ROI1)
+% 3-D binarized matrix visualization
+    [r, c, v] = ind2sub(size(ROI), find(ROI));
+    vessel = {[r, c, v]};
+    color_trip = jet(length(vessel));
+    % plot coronary artery tree
+    figure;
+    ax1 = subplot(1,2,1);
+    for ii = 1:length(vessel)
+        plot3(vessel{ii}(:, 1), ...
+              vessel{ii}(:, 2), ...
+              vessel{ii}(:, 3), ...
+              '.', 'Color', color_trip(ii, :)); % '.'(before sorting) or '-'(after sorting)
+        hold on;
+    end
+    
+    ax2 = subplot(1,2,2);
+    
+        for ii = 1:length(vessel)
+        plot3(vessel{ii}(:, 1), ...
+              vessel{ii}(:, 2), ...
+              vessel{ii}(:, 3), ...
+              '.', 'Color', color_trip(ii, :)); % '.'(before sorting) or '-'(after sorting)
+        hold on;
+    end
+end
+
+% function vesselShow(ROI)
+% % 3-D binarized matrix visualization
+%     [r, c, v] = ind2sub(size(ROI), find(ROI));
+%     vessel = {[r, c, v]};
+%     color_trip = jet(length(vessel));
+%     % plot coronary artery tree
+%     figure;
+%     for ii = 1:length(vessel)
+%         plot3(vessel{ii}(:, 1), ...
+%               vessel{ii}(:, 2), ...
+%               vessel{ii}(:, 3), ...
+%               '.', 'Color', color_trip(ii, :)); % '.'(before sorting) or '-'(after sorting)
+%         hold on;
+%     end
+% end
