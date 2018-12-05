@@ -1,4 +1,11 @@
 function [path, cost] = DijkstraConnect(ROI, weight, source, target)
+% connects two given points in the given region of interest using
+% Dijkstra's shortest path algorithm.
+% ROI: 3D logical matrix with source and target inside
+% weight: matrix of weight, same size as ROI (e.g. subregion of original .mha file)
+% source, target: coordinates of the 2 points to be connected
+% path: vector containing coordinates on the path with minimun cost
+% cost: total cost along the path
     [l, w, h] = size(ROI);
     weight = weight(:)'; % flatten
     s = [];
@@ -33,6 +40,5 @@ function [path, cost] = DijkstraConnect(ROI, weight, source, target)
     col = ceil(mod(path, l*w)/l);
     col(~col) = w;
     height = ceil(path/(l*w));
-    %     [row col height]
     path = [row col height];
 end
