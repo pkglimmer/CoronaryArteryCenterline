@@ -111,7 +111,6 @@ for ii = 1:length(img_list)
     % coronary artery tree obtained, and each element is a coordinate array
     % of a single branch
     coronary_show(coro_tree);
-    clear;
 %     %% save the tree obtained into a mat file (.mat)
 %     coro_tree{1} = rand(10, 3); % for example, branch 1
 %     coro_tree{2} = rand(12, 3); % for example, branch 2 ...
