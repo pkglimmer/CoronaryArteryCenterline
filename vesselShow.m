@@ -22,8 +22,7 @@ end
 function vesselPlot3(ROI)
     if isequal(class(ROI), 'logical')
         [r, c, v] = ind2sub(size(ROI), find(ROI));
-        ROI = [r, c, v];
-        plot3(ROI(:, 1), ROI(:, 2), ROI(:, 3), '.');
+        plot3(r, c, v, '.');
             hold on;
     else
         color_trip = jet(length(ROI));

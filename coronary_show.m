@@ -18,6 +18,7 @@ for ii = 1:length(coro_tree)
           coro_tree{ii}(:, 3), ...
           '.', 'Color', color_trip(ii, :)); % '.'(before sorting) or '-'(after sorting)
     hold on;
+    rotate3d on;
 end
 
 end
